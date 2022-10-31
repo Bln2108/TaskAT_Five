@@ -35,23 +35,23 @@ public class DataGenerator {
         return name;
     }
 
+
     public static String generatePhone(String locale) {
         Faker faker = new Faker(new Locale(locale));
-        String phone = faker.phoneNumber().phoneNumber();
+        String phone = faker.phoneNumber().cellPhone();
         return phone;
     }
 
     public static class Registration {
         private Registration() {
         }
- /*
-        public static UserInfo generateUser(String locale) {
-            Faker faker = new Faker(new Locale(locale));
-           return new UserInfo(
-                    faker.address().cityName(),
-                    faker.name().fullName(),
-                    faker.phoneNumber().phoneNumber()
-                    );
+
+       /* public static UserInfo generateUser(String locale) {
+            return new UserInfo(
+                    generateCity(locale),
+                    generateName(locale),
+                    generatePhone(locale)
+            );
         }*/
     }
 
