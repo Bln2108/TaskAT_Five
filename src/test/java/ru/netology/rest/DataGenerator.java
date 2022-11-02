@@ -46,13 +46,13 @@ public class DataGenerator {
         private Registration() {
         }
 
-       /* public static UserInfo generateUser(String locale) {
+        public static UserInfo generateUser(String locale) {
             return new UserInfo(
                     generateCity(locale),
                     generateName(locale),
                     generatePhone(locale)
             );
-        }*/
+        }
     }
 
     @Value

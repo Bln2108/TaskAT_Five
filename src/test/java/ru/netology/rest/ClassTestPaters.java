@@ -24,7 +24,7 @@ public class ClassTestPaters {
     @Test
     @DisplayName("Should successful plan and replan meeting")
     void shouldSuccessfulPlanAndReplanMeeting() {
-        //var validUser = DataGenerator.Registration.generateUser("ru");
+        var validUser = DataGenerator.Registration.generateUser("ru");
         var daysToAddForFirstMeeting = 4;
         var firstMeetingDate = DataGenerator.generateDate(daysToAddForFirstMeeting);
         var daysToAddForSecondMeeting = 7;
@@ -39,7 +39,7 @@ public class ClassTestPaters {
         $("[data-test-id='agreement']").click();
         $(byText("Запланировать")).click();
         $(withText("Успешно!")).shouldBe(visible, Duration.ofSeconds(15));
-        //$(".notification__content").shouldHave(Condition.text("Встреча успешно запланирована на " + firstMeetingDate));
+        $(".notification__content").shouldHave(Condition.text("Встреча успешно запланирована на " + firstMeetingDate));
 
         $("[data-test-id='date'] input").doubleClick();
         $("[data-test-id='date'] input").sendKeys(" ");
@@ -48,6 +48,7 @@ public class ClassTestPaters {
 
         $(withText("Перепланировать")).shouldBe(visible, Duration.ofSeconds(15));
         $(byText("Перепланировать")).click();
+        $(".notification__content").shouldHave(Condition.text("Встреча успешно запланирована на " + secondMeetingDate));
     }
 
 }
